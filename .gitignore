@@ -1,6 +1,24 @@
+# IntelliJ / Android Studio 개인 설정 파일 제외
+.idea/.name
+.idea/compiler.xml
+.idea/deploymentTargetSelector.xml
+.idea/gradle.xml
+.idea/kotlinc.xml
+.idea/migrations.xml
+.idea/inspectionProfiles/
+.idea/runConfigurations.xml
+.idea/vcs.xml
+
 *.iml
 .gradle
-/local.properties
+
+# Android build files
+/build/
+/app/build/
+/**/build/
+buildSrc/build/
+
+local.properties
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
@@ -8,8 +26,7 @@
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
 .DS_Store
-/build
+
 /captures
 .externalNativeBuild
 .cxx
-local.properties
