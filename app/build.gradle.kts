@@ -1,7 +1,20 @@
+import build.BuildConfig
+import build.BuildCreator
+import build.BuildDimension
+import deps.Dependencies
+import deps.DependenciesVersion
+import flavors.BuildFlavor
+import plugs.BuildPlugins
+import release.ReleaseConfig
+import signing.BuildSigning
+import signing.SigningTypes
+import test.TestBuildConfig
+import test.TestDependencies
+
 plugins {
-    id(BuildPlugins.ANDROID_APPLICATION)
-    id(BuildPlugins.KOTLIN_ANDROID)
-    id(BuildPlugins.KOTLIN_COMPOSE)
+    id(plugs.BuildPlugins.ANDROID_APPLICATION)
+    id(plugs.BuildPlugins.KOTLIN_ANDROID)
+    id(plugs.BuildPlugins.KOTLIN_COMPOSE) version deps.DependenciesVersion.KOTLIN
 }
 
 android {
@@ -18,15 +31,41 @@ android {
         testInstrumentationRunner = TestBuildConfig.TEST_INSTRUMENTATION_RUNNER
     }
 
+    signingConfigs {
+        BuildSigning.Release(project).create(this)
+        BuildSigning.ReleaseExternalQA(project).create(this)
+        BuildSigning.Debug(project).create(this)
+    }
+
     buildTypes {
-        release {
-            isMinifyEnabled = false
+        BuildCreator.Release(project).create(this).apply {
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName(SigningTypes.RELEASE)
+        }
+
+        BuildCreator.Debug(project).create(this).apply {
+            signingConfig = signingConfigs.getByName(SigningTypes.DEBUG)
+        }
+
+        BuildCreator.ReleaseExternalQA(project).create(this).apply {
+            signingConfig = signingConfigs.getByName(SigningTypes.RELEASE_EXTERNAL_QA)
         }
     }
+
+    flavorDimensions.add(BuildDimension.APP)
+    flavorDimensions.add(BuildDimension.STORE)
+
+    productFlavors {
+        BuildFlavor.Google.create(this)
+        BuildFlavor.Huawei.create(this)
+
+        BuildFlavor.Client.create(this)
+        BuildFlavor.Driver.create(this)
+    }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
@@ -36,6 +75,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 }
 

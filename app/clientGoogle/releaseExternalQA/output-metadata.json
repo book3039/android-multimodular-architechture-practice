@@ -1,0 +1,21 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.example.android_multimodular_architecture_practice.client.google.releaseExternalQA",
+  "variantName": "clientGoogleReleaseExternalQA",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 1,
+      "versionName": "1.0-client-google-QA",
+      "outputFile": "app-client-google-releaseExternalQA.apk"
+    }
+  ],
+  "elementType": "File",
+  "minSdkVersionForDexing": 29
+}
