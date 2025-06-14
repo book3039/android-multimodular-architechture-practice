@@ -1,5 +1,5 @@
 package com.example.info
 
 object MapProvider {
-    const val mapId = "1234"
+  const val mapId = "1234"
 }

@@ -21,3 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "android-multimodular-architecture-practice"
 include(":app")
+include(":features:login")
+include(":features:home")

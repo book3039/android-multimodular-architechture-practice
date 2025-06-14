@@ -1,4 +1,4 @@
-package com.example.android_multimodular_architecture_practice.ui.theme
+package com.example.androidmultimodulararchitecturepractice.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

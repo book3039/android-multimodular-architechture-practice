@@ -1,4 +1,4 @@
-package com.example.android_multimodular_architecture_practice
+package com.example.home
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,9 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals(
-            "com.example.android_multimodular_architecture_practice",
-            appContext.packageName
-        )
+        assertEquals("com.example.home.test", appContext.packageName)
     }
 }

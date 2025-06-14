@@ -9,4 +9,12 @@ object DependenciesVersion {
     const val ESPRESSO = "3.6.1"
     const val ACTIVITY_COMPOSE = "1.9.0"
     const val COMPOSE_BOM = "2024.04.01"
+
+    const val RETROFIT = "2.11.0"
+    const val RETROFIT_COROUTINE_ADAPTER_VERSION = "0.9.2"
+    const val OKHTTP = "5.0.0-alpha.2"
+    const val HILT = "2.44"
+    const val ROOM = "2.6.1"
+
+    const val KOTLIN_COMPILER = "1.5.3"
 }

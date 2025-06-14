@@ -15,8 +15,6 @@
 # Android build files
 /build/
 /app/build/
-/**/build/
-buildSrc/build/
 
 local.properties
 dev_credentials.properties

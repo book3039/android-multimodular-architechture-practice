@@ -1,5 +1,5 @@
 package com.example.provider
 
 object DataProvider {
-    const val userName = "choi-Huawei"
+  const val userName = "choi-Huawei"
 }
