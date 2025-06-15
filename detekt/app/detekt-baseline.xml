@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<SmellBaseline>
+  <ManuallySuppressedIssues></ManuallySuppressedIssues>
+  <CurrentIssues>
+    <ID>FunctionMaxLength:Theme.kt$@Composable @Suppress("FunctionNaming") fun AndroidmultimodulararchitecturepracticeTheme( darkTheme: Boolean = isSystemInDarkTheme(), // Dynamic color is available on Android 12+ dynamicColor: Boolean = true, content: @Composable () -&gt; Unit, )</ID>
+  </CurrentIssues>
+</SmellBaseline>

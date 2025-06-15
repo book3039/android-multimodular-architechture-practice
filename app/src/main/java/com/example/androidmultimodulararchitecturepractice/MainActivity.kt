@@ -27,12 +27,11 @@ class MainActivity : ComponentActivity() {
         }
       }
     }
-    val counter = 100
-    println(counter)
   }
 }
 
 @Composable
+@Suppress("FunctionNaming")
 fun Greeting(modifier: Modifier = Modifier) {
   Column(
     modifier = modifier,
