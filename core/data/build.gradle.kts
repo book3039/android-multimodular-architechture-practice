@@ -7,21 +7,21 @@ import deps.testImplDeps
 import plugs.SharedLibraryGradlePlugin
 
 plugins {
-    id(plugs.BuildPlugins.ANDROID_LIBRARY)
+  id(plugs.BuildPlugins.ANDROID_LIBRARY)
 }
 
 apply<SharedLibraryGradlePlugin>()
 
 android {
-    namespace = "com.example.data"
+  namespace = "com.example.data"
 }
 
 dependencies {
-    okHttp()
-    retrofit()
-    hilt()
+  okHttp()
+  retrofit()
+  hilt()
 
-    testDeps()
-    testImplDeps()
-    testDebugDeps()
+  testDeps()
+  testImplDeps()
+  testDebugDeps()
 }
