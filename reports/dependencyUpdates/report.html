@@ -1,0 +1,136 @@
+
+    <!DOCTYPE html>
+    <HEAD><TITLE>Project Dependency Updates Report</TITLE></HEAD>
+    <style type="text/css">
+       .body {
+        font:100% verdana, arial, sans-serif;
+        background-color:#fff
+        }
+       .currentInfo {
+           border-collapse: collapse;
+       }
+       .currentInfo header {
+           cursor:pointer;
+           padding: 12px 15px;
+       }
+       .currentInfo td {
+           border: 1px solid black;
+           padding: 12px 15px;
+           border-collapse: collapse;
+       }
+       .currentInfo tr:nth-child(even) {
+           background-color: #E4FFB7;
+           padding: 12px 15px;
+           border-collapse: collapse;
+       }
+       .currentInfo tr:nth-child(odd) {
+            background-color: #EFFFD2;
+           padding: 12px 15px;
+           border-collapse: collapse;
+       }
+
+       .warningInfo {
+           border-collapse: collapse;
+       }
+       .warningInfo header {
+           cursor:pointer;
+           padding: 12px 15px;
+       }
+       .warningInfo td {
+           border: 1px solid black;
+           padding: 12px 15px;
+           border-collapse: collapse;
+       }
+       .warningInfo tr:nth-child(even) {
+           background-color: #FFFF66;
+           padding: 12px 15px;
+           border-collapse: collapse;
+       }
+       .warningInfo tr:nth-child(odd) {
+            background-color: #FFFFCC;
+           padding: 12px 15px;
+           border-collapse: collapse;
+       }
+
+
+   </style>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+   <script type="text/javascript">
+   $(document).ready(function(){
+    /* set current to collapsed initially */
+    $('#currentId').nextUntil('tr.header').slideToggle(100, function(){});
+    /* click callback to toggle tables */
+    $('tr.header').click(function(){
+        $(this).find('span').text(function(_, value){return value=='(Click to collapse)'?'(Click to expand)':'(Click to collapse)'});
+        $(this).nextUntil('tr.header').slideToggle(100, function(){
+        });
+    });
+});
+   </script>
+   
+<H2>Current dependencies</H2>
+<p>The following dependencies are using the latest milestone version:<p>
+<table class="currentInfo">
+<tr class="header" id = "currentId" ><th colspan="4"><b>Current dependencies<span>(Click to expand)</span></b></th></tr>
+<tr><td><b>Name</b></td><td><b>Group</b></td><td><b>URL</b></td><td><b>Current Version</b></td><td><b>Reason</b></td></tr>
+<tr><td>espresso-core</td><td>androidx.test.espresso</td><td><a target="_blank" href="https://developer.android.com/testing">https://developer.android.com/testing</a></td><td>3.6.1 <a target="_blank" href="https://search.maven.org/artifact/androidx.test.espresso/espresso-core/3.6.1/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>junit</td><td>androidx.test.ext</td><td><a target="_blank" href="https://developer.android.com/testing">https://developer.android.com/testing</a></td><td>1.2.1 <a target="_blank" href="https://search.maven.org/artifact/androidx.test.ext/junit/1.2.1/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>junit</td><td>junit</td><td><a target="_blank" href="http://junit.org">http://junit.org</a></td><td>4.13.2 <a target="_blank" href="https://search.maven.org/artifact/junit/junit/4.13.2/bundle">Sonatype</a></td><td></td></tr>
+</table>
+<br>
+<H2>Later dependencies</H2>
+<p>The following dependencies have later milestone versions:<p>
+<table class="warningInfo">
+<tr class="header"><th colspan="5"><b>Later dependencies<span>(Click to collapse)</span></b></th></tr>
+<tr><td><b>Name</b></td><td><b>Group</b></td><td><b>URL</b></td><td><b>Current Version</b></td><td><b>Latest Version</b></td><td><b>Reason</b></td></tr>
+<tr><td>activity-compose</td><td>androidx.activity</td><td><a target="_blank" href="https://developer.android.com/jetpack/androidx/releases/activity#1.10.1">https://developer.android.com/jetpack/androidx/releases/activity#1.10.1</a></td><td>1.9.0 <a target="_blank" href="https://search.maven.org/artifact/androidx.activity/activity-compose/1.9.0/bundle">Sonatype</a></td><td>1.10.1 <a target="_blank" href="https://search.maven.org/artifact/androidx.activity/activity-compose/1.10.1/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>compose-bom</td><td>androidx.compose</td><td><a target="_blank" href="https://developer.android.com/jetpack">https://developer.android.com/jetpack</a></td><td>2024.04.01 <a target="_blank" href="https://search.maven.org/artifact/androidx.compose/compose-bom/2024.04.01/bundle">Sonatype</a></td><td>2025.06.00 <a target="_blank" href="https://search.maven.org/artifact/androidx.compose/compose-bom/2025.06.00/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>compiler</td><td>androidx.compose.compiler</td><td><a target="_blank" href="https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.5.15">https://developer.android.com/jetpack/androidx/releases/compose-compiler#1.5.15</a></td><td>1.5.3 <a target="_blank" href="https://search.maven.org/artifact/androidx.compose.compiler/compiler/1.5.3/bundle">Sonatype</a></td><td>1.5.15 <a target="_blank" href="https://search.maven.org/artifact/androidx.compose.compiler/compiler/1.5.15/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>material3</td><td>androidx.compose.material3</td><td><a target="_blank" href="https://developer.android.com/jetpack/androidx/releases/compose-material3#1.3.2">https://developer.android.com/jetpack/androidx/releases/compose-material3#1.3.2</a></td><td>1.2.1 <a target="_blank" href="https://search.maven.org/artifact/androidx.compose.material3/material3/1.2.1/bundle">Sonatype</a></td><td>1.3.2 <a target="_blank" href="https://search.maven.org/artifact/androidx.compose.material3/material3/1.3.2/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>ui</td><td>androidx.compose.ui</td><td><a target="_blank" href="https://developer.android.com/jetpack/androidx/releases/compose-ui#1.8.2">https://developer.android.com/jetpack/androidx/releases/compose-ui#1.8.2</a></td><td>1.6.6 <a target="_blank" href="https://search.maven.org/artifact/androidx.compose.ui/ui/1.6.6/bundle">Sonatype</a></td><td>1.8.2 <a target="_blank" href="https://search.maven.org/artifact/androidx.compose.ui/ui/1.8.2/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>ui-graphics</td><td>androidx.compose.ui</td><td><a target="_blank" href="https://developer.android.com/jetpack/androidx/releases/compose-ui#1.8.2">https://developer.android.com/jetpack/androidx/releases/compose-ui#1.8.2</a></td><td>1.6.6 <a target="_blank" href="https://search.maven.org/artifact/androidx.compose.ui/ui-graphics/1.6.6/bundle">Sonatype</a></td><td>1.8.2 <a target="_blank" href="https://search.maven.org/artifact/androidx.compose.ui/ui-graphics/1.8.2/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>ui-test-manifest</td><td>androidx.compose.ui</td><td><a target="_blank" href="https://developer.android.com/jetpack/androidx/releases/compose-ui#1.8.2">https://developer.android.com/jetpack/androidx/releases/compose-ui#1.8.2</a></td><td>1.6.6 <a target="_blank" href="https://search.maven.org/artifact/androidx.compose.ui/ui-test-manifest/1.6.6/bundle">Sonatype</a></td><td>1.8.2 <a target="_blank" href="https://search.maven.org/artifact/androidx.compose.ui/ui-test-manifest/1.8.2/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>ui-tooling</td><td>androidx.compose.ui</td><td><a target="_blank" href="https://developer.android.com/jetpack/androidx/releases/compose-ui#1.8.2">https://developer.android.com/jetpack/androidx/releases/compose-ui#1.8.2</a></td><td>1.6.6 <a target="_blank" href="https://search.maven.org/artifact/androidx.compose.ui/ui-tooling/1.6.6/bundle">Sonatype</a></td><td>1.8.2 <a target="_blank" href="https://search.maven.org/artifact/androidx.compose.ui/ui-tooling/1.8.2/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>ui-tooling-preview</td><td>androidx.compose.ui</td><td><a target="_blank" href="https://developer.android.com/jetpack/androidx/releases/compose-ui#1.8.2">https://developer.android.com/jetpack/androidx/releases/compose-ui#1.8.2</a></td><td>1.6.6 <a target="_blank" href="https://search.maven.org/artifact/androidx.compose.ui/ui-tooling-preview/1.6.6/bundle">Sonatype</a></td><td>1.8.2 <a target="_blank" href="https://search.maven.org/artifact/androidx.compose.ui/ui-tooling-preview/1.8.2/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>core-ktx</td><td>androidx.core</td><td><a target="_blank" href="https://developer.android.com/jetpack/androidx/releases/core#1.16.0">https://developer.android.com/jetpack/androidx/releases/core#1.16.0</a></td><td>1.13.1 <a target="_blank" href="https://search.maven.org/artifact/androidx.core/core-ktx/1.13.1/bundle">Sonatype</a></td><td>1.16.0 <a target="_blank" href="https://search.maven.org/artifact/androidx.core/core-ktx/1.16.0/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>lifecycle-runtime-ktx</td><td>androidx.lifecycle</td><td><a target="_blank" href="https://developer.android.com/jetpack/androidx/releases/lifecycle#2.9.1">https://developer.android.com/jetpack/androidx/releases/lifecycle#2.9.1</a></td><td>2.7.0 <a target="_blank" href="https://search.maven.org/artifact/androidx.lifecycle/lifecycle-runtime-ktx/2.7.0/bundle">Sonatype</a></td><td>2.9.1 <a target="_blank" href="https://search.maven.org/artifact/androidx.lifecycle/lifecycle-runtime-ktx/2.9.1/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>room-compiler</td><td>androidx.room</td><td><a target="_blank" href="https://developer.android.com/jetpack/androidx/releases/room#2.7.1">https://developer.android.com/jetpack/androidx/releases/room#2.7.1</a></td><td>2.6.1 <a target="_blank" href="https://search.maven.org/artifact/androidx.room/room-compiler/2.6.1/bundle">Sonatype</a></td><td>2.7.1 <a target="_blank" href="https://search.maven.org/artifact/androidx.room/room-compiler/2.7.1/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>room-ktx</td><td>androidx.room</td><td><a target="_blank" href="https://developer.android.com/jetpack/androidx/releases/room#2.7.1">https://developer.android.com/jetpack/androidx/releases/room#2.7.1</a></td><td>2.6.1 <a target="_blank" href="https://search.maven.org/artifact/androidx.room/room-ktx/2.6.1/bundle">Sonatype</a></td><td>2.7.1 <a target="_blank" href="https://search.maven.org/artifact/androidx.room/room-ktx/2.7.1/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>room-runtime</td><td>androidx.room</td><td><a target="_blank" href="https://developer.android.com/jetpack/androidx/releases/room#2.7.1">https://developer.android.com/jetpack/androidx/releases/room#2.7.1</a></td><td>2.6.1 <a target="_blank" href="https://search.maven.org/artifact/androidx.room/room-runtime/2.6.1/bundle">Sonatype</a></td><td>2.7.1 <a target="_blank" href="https://search.maven.org/artifact/androidx.room/room-runtime/2.7.1/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>android-device-provider-ddmlib</td><td>com.android.tools.utp</td><td><a target="_blank" href="https://developer.android.com/studio/build">https://developer.android.com/studio/build</a></td><td>31.7.0 <a target="_blank" href="https://search.maven.org/artifact/com.android.tools.utp/android-device-provider-ddmlib/31.7.0/bundle">Sonatype</a></td><td>31.10.1 <a target="_blank" href="https://search.maven.org/artifact/com.android.tools.utp/android-device-provider-ddmlib/31.10.1/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>android-device-provider-gradle</td><td>com.android.tools.utp</td><td><a target="_blank" href="https://developer.android.com/studio/build">https://developer.android.com/studio/build</a></td><td>31.7.0 <a target="_blank" href="https://search.maven.org/artifact/com.android.tools.utp/android-device-provider-gradle/31.7.0/bundle">Sonatype</a></td><td>31.10.1 <a target="_blank" href="https://search.maven.org/artifact/com.android.tools.utp/android-device-provider-gradle/31.10.1/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>android-test-plugin-host-additional-test-output</td><td>com.android.tools.utp</td><td><a target="_blank" href="https://developer.android.com/studio/build">https://developer.android.com/studio/build</a></td><td>31.7.0 <a target="_blank" href="https://search.maven.org/artifact/com.android.tools.utp/android-test-plugin-host-additional-test-output/31.7.0/bundle">Sonatype</a></td><td>31.10.1 <a target="_blank" href="https://search.maven.org/artifact/com.android.tools.utp/android-test-plugin-host-additional-test-output/31.10.1/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>android-test-plugin-host-apk-installer</td><td>com.android.tools.utp</td><td><a target="_blank" href="https://developer.android.com/studio/build">https://developer.android.com/studio/build</a></td><td>31.7.0 <a target="_blank" href="https://search.maven.org/artifact/com.android.tools.utp/android-test-plugin-host-apk-installer/31.7.0/bundle">Sonatype</a></td><td>31.10.1 <a target="_blank" href="https://search.maven.org/artifact/com.android.tools.utp/android-test-plugin-host-apk-installer/31.10.1/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>android-test-plugin-host-coverage</td><td>com.android.tools.utp</td><td><a target="_blank" href="https://developer.android.com/studio/build">https://developer.android.com/studio/build</a></td><td>31.7.0 <a target="_blank" href="https://search.maven.org/artifact/com.android.tools.utp/android-test-plugin-host-coverage/31.7.0/bundle">Sonatype</a></td><td>31.10.1 <a target="_blank" href="https://search.maven.org/artifact/com.android.tools.utp/android-test-plugin-host-coverage/31.10.1/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>android-test-plugin-host-device-info</td><td>com.android.tools.utp</td><td><a target="_blank" href="https://developer.android.com/studio/build">https://developer.android.com/studio/build</a></td><td>31.7.0 <a target="_blank" href="https://search.maven.org/artifact/com.android.tools.utp/android-test-plugin-host-device-info/31.7.0/bundle">Sonatype</a></td><td>31.10.1 <a target="_blank" href="https://search.maven.org/artifact/com.android.tools.utp/android-test-plugin-host-device-info/31.10.1/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>android-test-plugin-host-emulator-control</td><td>com.android.tools.utp</td><td><a target="_blank" href="https://developer.android.com/studio/build">https://developer.android.com/studio/build</a></td><td>31.7.0 <a target="_blank" href="https://search.maven.org/artifact/com.android.tools.utp/android-test-plugin-host-emulator-control/31.7.0/bundle">Sonatype</a></td><td>31.10.1 <a target="_blank" href="https://search.maven.org/artifact/com.android.tools.utp/android-test-plugin-host-emulator-control/31.10.1/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>android-test-plugin-host-logcat</td><td>com.android.tools.utp</td><td><a target="_blank" href="https://developer.android.com/studio/build">https://developer.android.com/studio/build</a></td><td>31.7.0 <a target="_blank" href="https://search.maven.org/artifact/com.android.tools.utp/android-test-plugin-host-logcat/31.7.0/bundle">Sonatype</a></td><td>31.10.1 <a target="_blank" href="https://search.maven.org/artifact/com.android.tools.utp/android-test-plugin-host-logcat/31.10.1/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>android-test-plugin-host-retention</td><td>com.android.tools.utp</td><td><a target="_blank" href="https://developer.android.com/studio/build">https://developer.android.com/studio/build</a></td><td>31.7.0 <a target="_blank" href="https://search.maven.org/artifact/com.android.tools.utp/android-test-plugin-host-retention/31.7.0/bundle">Sonatype</a></td><td>31.9.3 <a target="_blank" href="https://search.maven.org/artifact/com.android.tools.utp/android-test-plugin-host-retention/31.9.3/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>android-test-plugin-result-listener-gradle</td><td>com.android.tools.utp</td><td><a target="_blank" href="https://developer.android.com/studio/build">https://developer.android.com/studio/build</a></td><td>31.7.0 <a target="_blank" href="https://search.maven.org/artifact/com.android.tools.utp/android-test-plugin-result-listener-gradle/31.7.0/bundle">Sonatype</a></td><td>31.10.1 <a target="_blank" href="https://search.maven.org/artifact/com.android.tools.utp/android-test-plugin-result-listener-gradle/31.10.1/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>hilt-android</td><td>com.google.dagger</td><td><a target="_blank" href="https://github.com/google/dagger">https://github.com/google/dagger</a></td><td>2.44 <a target="_blank" href="https://search.maven.org/artifact/com.google.dagger/hilt-android/2.44/bundle">Sonatype</a></td><td>2.56.2 <a target="_blank" href="https://search.maven.org/artifact/com.google.dagger/hilt-android/2.56.2/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>hilt-compiler</td><td>com.google.dagger</td><td><a target="_blank" href="https://github.com/google/dagger">https://github.com/google/dagger</a></td><td>2.44 <a target="_blank" href="https://search.maven.org/artifact/com.google.dagger/hilt-compiler/2.44/bundle">Sonatype</a></td><td>2.56.2 <a target="_blank" href="https://search.maven.org/artifact/com.google.dagger/hilt-compiler/2.56.2/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>android-driver-instrumentation</td><td>com.google.testing.platform</td><td><a target="_blank" href="https://developer.android.com/testing">https://developer.android.com/testing</a></td><td>0.0.9-alpha02 <a target="_blank" href="https://search.maven.org/artifact/com.google.testing.platform/android-driver-instrumentation/0.0.9-alpha02/bundle">Sonatype</a></td><td>0.0.9-alpha03 <a target="_blank" href="https://search.maven.org/artifact/com.google.testing.platform/android-driver-instrumentation/0.0.9-alpha03/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>android-test-plugin</td><td>com.google.testing.platform</td><td><a target="_blank" href="https://developer.android.com/testing">https://developer.android.com/testing</a></td><td>0.0.9-alpha02 <a target="_blank" href="https://search.maven.org/artifact/com.google.testing.platform/android-test-plugin/0.0.9-alpha02/bundle">Sonatype</a></td><td>0.0.9-alpha03 <a target="_blank" href="https://search.maven.org/artifact/com.google.testing.platform/android-test-plugin/0.0.9-alpha03/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>core</td><td>com.google.testing.platform</td><td><a target="_blank" href="https://developer.android.com/testing">https://developer.android.com/testing</a></td><td>0.0.9-alpha02 <a target="_blank" href="https://search.maven.org/artifact/com.google.testing.platform/core/0.0.9-alpha02/bundle">Sonatype</a></td><td>0.0.9-alpha03 <a target="_blank" href="https://search.maven.org/artifact/com.google.testing.platform/core/0.0.9-alpha03/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>launcher</td><td>com.google.testing.platform</td><td><a target="_blank" href="https://developer.android.com/testing">https://developer.android.com/testing</a></td><td>0.0.9-alpha02 <a target="_blank" href="https://search.maven.org/artifact/com.google.testing.platform/launcher/0.0.9-alpha02/bundle">Sonatype</a></td><td>0.0.9-alpha03 <a target="_blank" href="https://search.maven.org/artifact/com.google.testing.platform/launcher/0.0.9-alpha03/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>ktlint</td><td>com.pinterest</td><td><a target="_blank" href="https://github.com/pinterest/ktlint">https://github.com/pinterest/ktlint</a></td><td>0.50.0 <a target="_blank" href="https://search.maven.org/artifact/com.pinterest/ktlint/0.50.0/bundle">Sonatype</a></td><td>0.51.0-FINAL <a target="_blank" href="https://search.maven.org/artifact/com.pinterest/ktlint/0.51.0-FINAL/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>detekt-formatting</td><td>io.gitlab.arturbosch.detekt</td><td><a target="_blank" href="https://detekt.dev">https://detekt.dev</a></td><td>1.23.3 <a target="_blank" href="https://search.maven.org/artifact/io.gitlab.arturbosch.detekt/detekt-formatting/1.23.3/bundle">Sonatype</a></td><td>1.23.8 <a target="_blank" href="https://search.maven.org/artifact/io.gitlab.arturbosch.detekt/detekt-formatting/1.23.8/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>org.jacoco.ant</td><td>org.jacoco</td><td><a target="_blank" href="http://jacoco.org">http://jacoco.org</a></td><td>0.8.11 <a target="_blank" href="https://search.maven.org/artifact/org.jacoco/org.jacoco.ant/0.8.11/bundle">Sonatype</a></td><td>0.8.13 <a target="_blank" href="https://search.maven.org/artifact/org.jacoco/org.jacoco.ant/0.8.13/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>kotlin-annotation-processing-gradle</td><td>org.jetbrains.kotlin</td><td><a target="_blank" href="https://kotlinlang.org/">https://kotlinlang.org/</a></td><td>1.9.10 <a target="_blank" href="https://search.maven.org/artifact/org.jetbrains.kotlin/kotlin-annotation-processing-gradle/1.9.10/bundle">Sonatype</a></td><td>2.1.21 <a target="_blank" href="https://search.maven.org/artifact/org.jetbrains.kotlin/kotlin-annotation-processing-gradle/2.1.21/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>kotlin-stdlib</td><td>org.jetbrains.kotlin</td><td><a target="_blank" href="https://kotlinlang.org/">https://kotlinlang.org/</a></td><td>1.9.10 <a target="_blank" href="https://search.maven.org/artifact/org.jetbrains.kotlin/kotlin-stdlib/1.9.10/bundle">Sonatype</a></td><td>2.1.21 <a target="_blank" href="https://search.maven.org/artifact/org.jetbrains.kotlin/kotlin-stdlib/2.1.21/bundle">Sonatype</a></td><td></td></tr>
+<tr><td>kotlin-stdlib-jdk8</td><td>org.jetbrains.kotlin</td><td><a target="_blank" href="https://kotlinlang.org/">https://kotlinlang.org/</a></td><td>1.9.10 <a target="_blank" href="https://search.maven.org/artifact/org.jetbrains.kotlin/kotlin-stdlib-jdk8/1.9.10/bundle">Sonatype</a></td><td>2.1.21 <a target="_blank" href="https://search.maven.org/artifact/org.jetbrains.kotlin/kotlin-stdlib-jdk8/2.1.21/bundle">Sonatype</a></td><td></td></tr>
+</table>
+<br>
+<H2>Undeclared dependencies</H2>
+<p>Failed to compare versions for the following dependencies because they were declared without version:<p>
+<table class="warningInfo">
+<tr class="header"><th colspan="2"><b>Undeclared dependencies<span>(Click to collapse)</span></b></th></tr>
+<tr><td><b>Name</b></td><td><b>Group</b></td></tr>
+<tr><td>ui-test-junit4</td><td>androidx.compose.ui</td></tr>
+</table>
+<br>
+<H2>Gradle release-candidate updates</H2>
+Gradle release-candidate updates:
+<P>Gradle: [<a target="_blank" href="https://docs.gradle.org/8.9/release-notes.html">8.9</a> -> <a target="_blank" href="https://docs.gradle.org/8.14.2/release-notes.html">8.14.2</a>]<P>
+<P>For information about Gradle releases click <a target="_blank" href="https://gradle.org/releases/">here</a>.
