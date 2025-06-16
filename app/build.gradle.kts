@@ -3,9 +3,12 @@ import builds.BuildCreator
 import builds.BuildDimension
 import deps.DependenciesVersion
 import deps.androidx
+import deps.dataModule
+import deps.domainModule
 import deps.hilt
 import deps.loginModule
 import deps.okHttp
+import deps.presentationModule
 import deps.retrofit
 import deps.room
 import deps.testDebugDeps
@@ -23,6 +26,8 @@ plugins {
   id(plugs.BuildPlugins.KOTLIN_ANDROID)
   id(plugs.BuildPlugins.ANDROID)
   id(plugs.BuildPlugins.KAPT)
+  id(plugs.BuildPlugins.HILT) version deps.DependenciesVersion.HILT
+
   id(plugs.BuildPlugins.KTLINT)
   id(plugs.BuildPlugins.SPOTLESS)
   id(plugs.BuildPlugins.DETEKT)
@@ -100,6 +105,10 @@ android {
 
 dependencies {
   loginModule()
+  dataModule()
+  domainModule()
+  presentationModule()
+
   androidx()
   hilt()
   room()

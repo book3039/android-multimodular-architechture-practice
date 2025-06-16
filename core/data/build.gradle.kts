@@ -1,3 +1,6 @@
+import deps.hilt
+import deps.okHttp
+import deps.retrofit
 import deps.testDebugDeps
 import deps.testDeps
 import deps.testImplDeps
@@ -14,6 +17,10 @@ android {
 }
 
 dependencies {
+    okHttp()
+    retrofit()
+    hilt()
+
     testDeps()
     testImplDeps()
     testDebugDeps()
