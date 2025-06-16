@@ -23,3 +23,6 @@ rootProject.name = "android-multimodular-architecture-practice"
 include(":app")
 include(":features:login")
 include(":features:home")
+include(":core:data")
+include(":core:domain")
+include(":core:presentation")
