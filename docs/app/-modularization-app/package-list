@@ -1,0 +1,32 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.example.androidmultimodulararchitecturepractice.ui.theme////PointingToDeclaration/-modularization-app/com.example.androidmultimodulararchitecturepractice.ui.theme/index.html
+$dokka.location:com.example.androidmultimodulararchitecturepractice.ui.theme//AndroidmultimodulararchitecturepracticeTheme/#kotlin.Boolean#kotlin.Boolean#kotlin.Function0[kotlin.Unit]/PointingToDeclaration/-modularization-app/com.example.androidmultimodulararchitecturepractice.ui.theme/[-j-v-m]-androidmultimodulararchitecturepractice-theme.html
+$dokka.location:com.example.androidmultimodulararchitecturepractice.ui.theme//Pink40/#/PointingToDeclaration/-modularization-app/com.example.androidmultimodulararchitecturepractice.ui.theme/-pink40.html
+$dokka.location:com.example.androidmultimodulararchitecturepractice.ui.theme//Pink80/#/PointingToDeclaration/-modularization-app/com.example.androidmultimodulararchitecturepractice.ui.theme/-pink80.html
+$dokka.location:com.example.androidmultimodulararchitecturepractice.ui.theme//Purple40/#/PointingToDeclaration/-modularization-app/com.example.androidmultimodulararchitecturepractice.ui.theme/-purple40.html
+$dokka.location:com.example.androidmultimodulararchitecturepractice.ui.theme//Purple80/#/PointingToDeclaration/-modularization-app/com.example.androidmultimodulararchitecturepractice.ui.theme/-purple80.html
+$dokka.location:com.example.androidmultimodulararchitecturepractice.ui.theme//PurpleGrey40/#/PointingToDeclaration/-modularization-app/com.example.androidmultimodulararchitecturepractice.ui.theme/-purple-grey40.html
+$dokka.location:com.example.androidmultimodulararchitecturepractice.ui.theme//PurpleGrey80/#/PointingToDeclaration/-modularization-app/com.example.androidmultimodulararchitecturepractice.ui.theme/-purple-grey80.html
+$dokka.location:com.example.androidmultimodulararchitecturepractice.ui.theme//Typography/#/PointingToDeclaration/-modularization-app/com.example.androidmultimodulararchitecturepractice.ui.theme/-typography.html
+$dokka.location:com.example.androidmultimodulararchitecturepractice////PointingToDeclaration/-modularization-app/com.example.androidmultimodulararchitecturepractice/index.html
+$dokka.location:com.example.androidmultimodulararchitecturepractice//Greeting/#[Error type: Unresolved type for Modifier]/PointingToDeclaration/-modularization-app/com.example.androidmultimodulararchitecturepractice/[-j-v-m]-greeting.html
+$dokka.location:com.example.androidmultimodulararchitecturepractice//Greeting/#androidx.compose.ui.Modifier/PointingToDeclaration/-modularization-app/com.example.androidmultimodulararchitecturepractice/[-j-v-m]-greeting.html
+$dokka.location:com.example.androidmultimodulararchitecturepractice/ExampleInstrumentedTest///PointingToDeclaration/-modularization-app/com.example.androidmultimodulararchitecturepractice/[-j-v-m]-example-instrumented-test/index.html
+$dokka.location:com.example.androidmultimodulararchitecturepractice/ExampleInstrumentedTest/ExampleInstrumentedTest/#/PointingToDeclaration/-modularization-app/com.example.androidmultimodulararchitecturepractice/[-j-v-m]-example-instrumented-test/-example-instrumented-test.html
+$dokka.location:com.example.androidmultimodulararchitecturepractice/ExampleInstrumentedTest/useAppContext/#/PointingToDeclaration/-modularization-app/com.example.androidmultimodulararchitecturepractice/[-j-v-m]-example-instrumented-test/use-app-context.html
+$dokka.location:com.example.androidmultimodulararchitecturepractice/ExampleUnitTest///PointingToDeclaration/-modularization-app/com.example.androidmultimodulararchitecturepractice/[-j-v-m]-example-unit-test/index.html
+$dokka.location:com.example.androidmultimodulararchitecturepractice/ExampleUnitTest/ExampleUnitTest/#/PointingToDeclaration/-modularization-app/com.example.androidmultimodulararchitecturepractice/[-j-v-m]-example-unit-test/-example-unit-test.html
+$dokka.location:com.example.androidmultimodulararchitecturepractice/ExampleUnitTest/addition_isCorrect/#/PointingToDeclaration/-modularization-app/com.example.androidmultimodulararchitecturepractice/[-j-v-m]-example-unit-test/addition_is-correct.html
+$dokka.location:com.example.androidmultimodulararchitecturepractice/MainActivity///PointingToDeclaration/-modularization-app/com.example.androidmultimodulararchitecturepractice/[-j-v-m]-main-activity/index.html
+$dokka.location:com.example.androidmultimodulararchitecturepractice/MainActivity/MainActivity/#/PointingToDeclaration/-modularization-app/com.example.androidmultimodulararchitecturepractice/[-j-v-m]-main-activity/-main-activity.html
+$dokka.location:com.example.info////PointingToDeclaration/-modularization-app/com.example.info/index.html
+$dokka.location:com.example.info/MapProvider///PointingToDeclaration/-modularization-app/com.example.info/[-j-v-m]-map-provider/index.html
+$dokka.location:com.example.info/MapProvider/mapId/#/PointingToDeclaration/-modularization-app/com.example.info/[-j-v-m]-map-provider/map-id.html
+$dokka.location:com.example.provider////PointingToDeclaration/-modularization-app/com.example.provider/index.html
+$dokka.location:com.example.provider/DataProvider///PointingToDeclaration/-modularization-app/com.example.provider/[-j-v-m]-data-provider/index.html
+$dokka.location:com.example.provider/DataProvider/userName/#/PointingToDeclaration/-modularization-app/com.example.provider/[-j-v-m]-data-provider/user-name.html
+com.example.androidmultimodulararchitecturepractice
+com.example.androidmultimodulararchitecturepractice.ui.theme
+com.example.info
+com.example.provider
