@@ -13,7 +13,6 @@ fun DependencyHandler.room() {
 fun DependencyHandler.retrofit() {
     implementation(Dependencies.retrofit)
     implementation(Dependencies.retrofitConverterGson)
-    kapt(Dependencies.retrofitKotlinCoroutinesAdapter)
 }
 
 fun DependencyHandler.okHttp() {
