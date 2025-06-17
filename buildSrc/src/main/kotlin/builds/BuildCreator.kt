@@ -29,6 +29,10 @@ sealed class BuildCreator(val name: String) {
                     BuildVariables.BASE_URL,
                     project.getLocalProperty("dev.debug_endpoint")
                 )
+                buildConfigStringField(
+                    BuildVariables.PIN_CERTIFICATE,
+                    project.getLocalProperty("dev.project.certificate_pin")
+                )
                 buildConfigIntField(
                     BuildVariables.DB_VERSION,
                     project.getLocalProperty("dev.db_version")
@@ -48,6 +52,28 @@ sealed class BuildCreator(val name: String) {
             return namedDomainObjectContainer.getByName(name) {
                 isMinifyEnabled = Build.Debug.isMinifyEnabled
                 enableUnitTestCoverage = Build.Debug.enableUnitTestCoverage
+
+
+                buildConfigStringField(
+                    BuildVariables.BASE_URL,
+                    project.getLocalProperty("dev.debug_endpoint")
+                )
+                buildConfigStringField(
+                    BuildVariables.PIN_CERTIFICATE,
+                    project.getLocalProperty("dev.project.certificate_pin")
+                )
+                buildConfigIntField(
+                    BuildVariables.DB_VERSION,
+                    project.getLocalProperty("dev.db_version")
+                )
+                buildConfigBooleanField(
+                    BuildVariables.CAN_CLEAR_CACHE,
+                    project.getLocalProperty("dev.clear_cache")
+                )
+                buildConfigStringField(
+                    BuildVariables.MAP_KEY,
+                    project.getLocalProperty("dev.map_key")
+                )
             }
         }
     }
@@ -62,6 +88,10 @@ sealed class BuildCreator(val name: String) {
                 buildConfigStringField(
                     BuildVariables.BASE_URL,
                     project.getLocalProperty("dev.prod_endpoint")
+                )
+                buildConfigStringField(
+                    BuildVariables.PIN_CERTIFICATE,
+                    project.getLocalProperty("release.project.certificate_pin")
                 )
                 buildConfigIntField(
                     BuildVariables.DB_VERSION,
@@ -82,6 +112,27 @@ sealed class BuildCreator(val name: String) {
             return namedDomainObjectContainer.getByName(name) {
                 isMinifyEnabled = Build.Release.isMinifyEnabled
                 enableUnitTestCoverage = Build.Release.enableUnitTestCoverage
+
+                buildConfigStringField(
+                    BuildVariables.BASE_URL,
+                    project.getLocalProperty("dev.prod_endpoint")
+                )
+                buildConfigStringField(
+                    BuildVariables.PIN_CERTIFICATE,
+                    project.getLocalProperty("release.project.certificate_pin")
+                )
+                buildConfigIntField(
+                    BuildVariables.DB_VERSION,
+                    project.getLocalProperty("dev.db_version")
+                )
+                buildConfigBooleanField(
+                    BuildVariables.CAN_CLEAR_CACHE,
+                    project.getLocalProperty("dev.clear_cache")
+                )
+                buildConfigStringField(
+                    BuildVariables.MAP_KEY,
+                    project.getLocalProperty("release.map_key")
+                )
             }
         }
     }
@@ -99,6 +150,10 @@ sealed class BuildCreator(val name: String) {
                 buildConfigStringField(
                     BuildVariables.BASE_URL,
                     project.getLocalProperty("dev.qa_endpoint")
+                )
+                buildConfigStringField(
+                    BuildVariables.PIN_CERTIFICATE,
+                    project.getLocalProperty("dev.project.certificate_pin")
                 )
                 buildConfigIntField(
                     BuildVariables.DB_VERSION,
@@ -119,6 +174,27 @@ sealed class BuildCreator(val name: String) {
             return namedDomainObjectContainer.create(name) {
                 isMinifyEnabled = Build.ReleaseExternalQA.isMinifyEnabled
                 enableUnitTestCoverage = Build.ReleaseExternalQA.enableUnitTestCoverage
+
+                buildConfigStringField(
+                    BuildVariables.BASE_URL,
+                    project.getLocalProperty("dev.qa_endpoint")
+                )
+                buildConfigStringField(
+                    BuildVariables.PIN_CERTIFICATE,
+                    project.getLocalProperty("dev.project.certificate_pin")
+                )
+                buildConfigIntField(
+                    BuildVariables.DB_VERSION,
+                    project.getLocalProperty("dev.db_version")
+                )
+                buildConfigBooleanField(
+                    BuildVariables.CAN_CLEAR_CACHE,
+                    project.getLocalProperty("dev.clear_cache")
+                )
+                buildConfigStringField(
+                    BuildVariables.MAP_KEY,
+                    project.getLocalProperty("dev.map_key")
+                )
             }
         }
     }
