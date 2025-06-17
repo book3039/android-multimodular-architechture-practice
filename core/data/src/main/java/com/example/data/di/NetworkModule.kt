@@ -1,5 +1,16 @@
-package com.example.data
+package com.example.data.di
 
+import com.example.data.BuildConfig
+import com.example.data.OkHttpClientProvider
+import com.example.data.constants.ACCESS_TOKEN_TAG
+import com.example.data.constants.CLIENT_ID_TAG
+import com.example.data.constants.HEADER_INTERCEPTOR_TAG
+import com.example.data.constants.LANGUAGE_TAG
+import com.example.data.constants.LOGGING_INTERCEPTOR_TAG
+import com.example.data.interceptors.AUTHORIZATION_HEADER
+import com.example.data.interceptors.CLIENT_ID_HEADER
+import com.example.data.interceptors.HeaderInterceptor
+import com.example.data.okhttp.OkHttpClientProviderInterface
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,32 +28,11 @@ import javax.inject.Singleton
 class NetworkModule {
   @Provides
   @Singleton
-  @Named("Language")
-  fun provideLanguage(): () -> Locale {
-    return { Locale.ENGLISH } // to do, get locale from user prefs later
-  }
-
-  @Provides
-  @Singleton
-  @Named("AccessToken")
-  fun provideAccessToken(): () -> String? {
-    return { "" } // to do, get access token from user prefs later
-  }
-
-  @Provides
-  @Singleton
-  @Named("ClientId")
-  fun provideClientId(): String {
-    return "" // to do, get client id from user prefs later
-  }
-
-  @Provides
-  @Singleton
-  @Named("HeaderInterceptor")
+  @Named(HEADER_INTERCEPTOR_TAG)
   fun provideHeaderInterceptor(
-    @Named("ClientId") clientId: String,
-    @Named("AccessToken") accessTokenProvider: () -> String?,
-    @Named("Language") languageProvider: () -> Locale,
+    @Named(CLIENT_ID_TAG) clientId: String,
+    @Named(ACCESS_TOKEN_TAG) accessTokenProvider: () -> String?,
+    @Named(LANGUAGE_TAG) languageProvider: () -> Locale,
   ): Interceptor {
     return HeaderInterceptor(
       clientId = clientId,
@@ -53,7 +43,7 @@ class NetworkModule {
 
   @Provides
   @Singleton
-  @Named("OkHttpLoggingInterceptor")
+  @Named(LOGGING_INTERCEPTOR_TAG)
   fun provideOkHttpLoggingInterceptor(): Interceptor {
     return HttpLoggingInterceptor().apply {
       if (BuildConfig.DEBUG) {
@@ -75,8 +65,8 @@ class NetworkModule {
   @Provides
   @Singleton
   fun provideOkHttpCallFactory(
-    @Named("OkHttpLoggingInterceptor") okHttpLoggingInterceptor: Interceptor,
-    @Named("HeaderInterceptor") headerInterceptor: Interceptor,
+    @Named(LOGGING_INTERCEPTOR_TAG) okHttpLoggingInterceptor: Interceptor,
+    @Named(HEADER_INTERCEPTOR_TAG) headerInterceptor: Interceptor,
     okHttpClientProvider: OkHttpClientProviderInterface,
   ): Call.Factory {
     return okHttpClientProvider.getOkHttpClient(BuildConfig.PIN_CERTIFICATE)
